@@ -4,7 +4,7 @@
 
 ## 🧪 Techno
 
-- **Langage :** JavaScript (Node.js v20.17.0)  
+- **Langage :** JavaScript (Node.js v20.20.2)  
 - **Librairie principale :** [discord.js v14](https://discord.js.org)  
 - **Base de données :** [quick.db](https://www.npmjs.com/package/quick.db)
 
@@ -16,7 +16,7 @@
 
 ```bash
 git clone https://github.com/klxque/LimiteRole-discordjs-v14
-cd Tracer-Bot-v14
+cd LimiteRole-discordjs-v14
 ```
 ### 2. Installer les dépendances
 
