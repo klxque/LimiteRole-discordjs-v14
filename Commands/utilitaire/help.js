@@ -25,7 +25,7 @@ exports.run = async (bot, message, args, config) => {
     const helpMsg = new ContainerBuilder()
         .setAccentColor(0x6E0B26)
         .addTextDisplayComponents(
-            new TextDisplayBuilder().setTitle('Help')
+            new TextDisplayBuilder().setContent("# Help")
         )
         .addSeparatorComponents(
             new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small)
@@ -49,9 +49,11 @@ exports.run = async (bot, message, args, config) => {
             new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small)
         )
         .addTextDisplayComponents(
-            new TextDisplayBuilder().setContent(`\`${prefix}limiterole list\`\nAffiche la liste des rôles limités.\n\`${prefix}limiterole add <role> <nombre>\`\nAjoute une limite à un rôle.\n\n\`${prefix}limiterole remove <role>\`\nSupprime la limite d'un rôle.`)
+            new TextDisplayBuilder().setContent(`\`${prefix}limiterole list\`\nAffiche la liste des rôles limités.\n\n\`${prefix}limiterole add <role> <nombre>\`\nAjoute une limite à un rôle.\n\n\`${prefix}limiterole remove <role>\`\nSupprime la limite d'un rôle.`)
         )
         .addSeparatorComponents(
             new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small)
         )
+
+    await message.channel.send({ components: [helpMsg], flags: MessageFlags.IsComponentsV2 });
 }

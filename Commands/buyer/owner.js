@@ -29,7 +29,6 @@ exports.run = async (bot, message, args, config) => {
     const dbOwners = await db.get('owners') || [];
     const allOwners = [...new Set([config.buyer, ...dbOwners])];
 
-    // Pas d'argument → afficher la liste
     if (!args[0]) {
         const lines = allOwners.map(id => {
             const member = message.guild.members.cache.get(id);
@@ -46,7 +45,6 @@ exports.run = async (bot, message, args, config) => {
         return await message.channel.send({ embeds: [embed] });
     }
 
-    // Avec argument → ajouter
     const userId = args[0].replace(/[<@!>]/g, '').trim();
     const member = await message.guild.members.fetch(userId).catch(() => null);
 
